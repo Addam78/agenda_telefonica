@@ -29,8 +29,8 @@ def adicionar_novo_contato():
 
 # adicionar_novo_numero()
 def adicionar_novo_numero():
-    inserir = input('Deseja inserir a um numero a um contato existente ou inserir tudo do 0 ? ')
-    if inserir == ' do 0':
+    inserir = input('Deseja inserir a um numero a um contato existente ou inserir do começo ? ')
+    if inserir == 'começo':
         adicionar_novo_contato()
     elif inserir == 'existente':
         qualc = str(input('Qual seria o nome dessa pessoa ? '))
@@ -45,21 +45,28 @@ def adicionar_novo_numero():
                     n['Telefone2'] = input('Insira o numero se for no chip2 ')
                     print('Cotnato adicionado com sucesso')
                     print(lista)
+               
+            
 
 
 # excluir_contato_completo()
 def excluir_contato_completo():
-    ctz = input('Tem certeza que deseja utilizar essa função de deletar contatos ?')
+    ctz = input('Tem certeza que deseja utilizar essa função de deletar contatos ? ')
     if ctz == 'sim':
-        apagar = input('Qual nome do contato que deseja apagar')
+        apagar = input('Qual nome do contato que deseja apagar ')
         if apagar in agenda['nome']:
             agenda.clear()
             for n in lista:
                 if n['nome'] == apagar:
                     alvo = (lista.index(n))
                     lista.pop(alvo)
-                    print('Listas com os contatos atuais')
+                    print('Listas com os contatos atuais ')
                     print(lista)
+        else:
+            print('Nome invalido')
+                    
+        
+            
 
 # encontrar_numero()
 def encontrar_numero():
@@ -71,7 +78,7 @@ def encontrar_numero():
         elif numero in n['Telefone2']:
             print(f'O numero pertence a segunda paleta de contatos {n}')
         else:
-            pass
+            print('Numero invaido')
 
 
 # excluir_numero()
@@ -115,7 +122,7 @@ while True:
     for n in opcoes:
         print(f'{n}')
         print('-=-'*18)
-    escolha=input(f'Qual das opções voce deseja .')
+    escolha=input(f'Qual das opções voce deseja ')
 
 
     if escolha =='1':
